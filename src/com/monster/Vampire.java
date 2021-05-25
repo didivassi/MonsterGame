@@ -11,7 +11,7 @@ public class Vampire extends Monster{
         int bite=Util.getRandom(0,1);
         if(bite==1){
             int healthToGain=Util.getRandom(5,10);
-            super.increaseHealth(healthToGain);
+            increaseHealth(healthToGain);
             System.out.println("Nice neck Monster to bite I've gained " + healthToGain + " points of health ");
         }
         super.attack();
