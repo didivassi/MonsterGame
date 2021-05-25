@@ -24,8 +24,8 @@ public class Player {
     }
 
     public Monster defend(Monster attacker){
-            Monster monster= pickMonsterHand();
-            monster.defend(attacker);
+        Monster monster= pickMonsterHand();
+        monster.defend(attacker);
         return monster;
     }
 

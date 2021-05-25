@@ -14,5 +14,6 @@ public class Vampire extends Monster{
             super.increaseHealth(healthToGain);
             System.out.println("Nice neck Monster to bite I've gained " + healthToGain + " points of health ");
         }
+        super.attack();
     }
 }
