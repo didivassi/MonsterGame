@@ -25,7 +25,6 @@ public class Game {
                 playerAttacker=player2;
                 playerDefender=player1;
             }
-
             if(!playerDefender.canDefend()){
                 System.out.println(playerAttacker + " won the game");
                 break;

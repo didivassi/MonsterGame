@@ -10,6 +10,7 @@ public abstract class MonsterFactory {
                 return new Werewolf();
             case MUMMY:
                 return new Mummy();
+            case VAMPIRE:
             default:
                 return new Vampire();
         }
