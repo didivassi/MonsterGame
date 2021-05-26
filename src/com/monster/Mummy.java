@@ -11,22 +11,23 @@ public class Mummy extends Monster{
     }
 
     @Override
-    public void attack(){
+    public int attack(){
         if(consecutiveAttacks==MAX_CONSECUTIVE_ATTACKS){
             consecutiveAttacks=0;
             int healthToLoose=Util.getRandom(5,10);
-            super.decreaseHealth(healthToLoose);
+            decreaseHealth(healthToLoose);
             System.out.println("Can't attack. I'm falling and unrolling... Too much attacks. I've lost " + healthToLoose + " points of health ");
-            return;
+            return 0;
         }
-        super.attack();
+
         consecutiveAttacks++;
+        return super.attack();
     }
 
     @Override
-    public void defend(Monster attacker){
+    public void defend(int attackPower){
         consecutiveAttacks=0;
-        super.defend(attacker);
+        super.defend(attackPower);
 
     }
 

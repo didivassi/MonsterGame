@@ -10,12 +10,12 @@ public abstract class  Monster {
         health=100;
     }
 
-    public void attack(){
-
+    public int attack(){
+        return type.attackPower;
     }
 
-    public void defend(Monster attacker){
-        decreaseHealth(attacker.type.damageCaused);
+    public void defend(int attackPower){//podia ser com um int
+        decreaseHealth(attackPower);
     }
 
     public void increaseHealth(int amount){
@@ -24,6 +24,12 @@ public abstract class  Monster {
 
     public void decreaseHealth(int amount){
         health -= amount;
+       // health=health<0?0:health;
+
+    }
+
+    public int getAttackPower(){
+        return type.attackPower;
     }
 
     public int getHealth(){

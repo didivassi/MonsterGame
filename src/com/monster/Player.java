@@ -25,30 +25,32 @@ public class Player {
 
     public Monster defend(Monster attacker){
         Monster monster= pickMonsterHand();
-        monster.defend(attacker);
+        monster.defend(attacker.attack());
         return monster;
     }
 
-    public boolean canDefend(){
-        return areMonstersLeft();
+    public boolean canPlayNextRound(){
+        return monstersLeft()>0;
     }
 
-    private boolean areMonstersLeft(){
+
+    public int monstersLeft(){
         int monstersLeft=monsters.length;
         for (Monster monster:monsters) {
             if(monster.getHealth()<=0){
                 monstersLeft--;
             }
         }
-        return monstersLeft>0;
+        return monstersLeft;
     }
 
     private Monster pickMonsterHand(){
         Monster monster=monsters[Util.getRandom(0,monsters.length-1)];
-        if(monster.getHealth()==0){
+        if(monster.getHealth()<=0){
            return pickMonsterHand();
         }
          return monster;
+
               /*Monster biggestHealthMonster=null;
         int biggestHealth=0;
         for (Monster monster:monsters) {

@@ -23,14 +23,23 @@ public class Game {
                 playerAttacker=player2;
                 playerDefender=player1;
             }
-            if(!playerDefender.canDefend()){
+
+
+            if(!playerDefender.canPlayNextRound()){
                 System.out.println(playerAttacker + " won the game");
                 break;
             }
+            if(!playerAttacker.canPlayNextRound()){
+                System.out.println(playerDefender + " won the game");
+                break;
+            }
+
             Monster monsterAttacker= playerAttacker.attack();
             Monster monsterDefender = playerDefender.defend(monsterAttacker);
-            System.out.println(playerAttacker + " is Attacker and chose " + monsterAttacker);
-            System.out.println(playerDefender+" is Defender chose " + monsterDefender);
+            System.out.println(playerAttacker + " is Attacker and chose " + monsterAttacker + " with attack power of " + monsterAttacker.getAttackPower());
+            System.out.println(playerDefender+" is Defender chose " + monsterDefender + " and life left is now " + monsterDefender.getHealth());
+            System.out.println(playerAttacker + " monsters left " + playerAttacker.monstersLeft());
+            System.out.println(playerDefender+" monsters left  " + playerDefender.monstersLeft());
 
         }
 

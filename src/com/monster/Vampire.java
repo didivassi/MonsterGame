@@ -7,13 +7,13 @@ public class Vampire extends Monster{
     }
 
     @Override
-    public void attack(){
+    public int attack(){
         int bite=Util.getRandom(0,1);
         if(bite==1){
             int healthToGain=Util.getRandom(5,10);
             increaseHealth(healthToGain);
             System.out.println("Nice neck Monster to bite I've gained " + healthToGain + " points of health ");
         }
-        super.attack();
+       return super.attack();
     }
 }
